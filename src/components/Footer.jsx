@@ -35,18 +35,62 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4">Products</h4>
             <div className="flex flex-col gap-2">
-              <a href="#" className="hover:text-blue-300 transition-colors">
-                Car Loans
-              </a>
-              <a href="#" className="hover:text-blue-300 transition-colors">
-                Personal Loans
-              </a>
-              <a href="#" className="hover:text-blue-300 transition-colors">
-                Business Loans
-              </a>
-              <a href="#" className="hover:text-blue-300 transition-colors">
-                Marine Loans
-              </a>
+             <ul className="space-y-2 text-sm">
+   <li>
+  <Link to="/services/0" className="hover:text-white transition-colors">
+    Car Loans
+  </Link>
+</li>
+
+<li>
+  <Link to="/services/1" className="hover:text-white transition-colors">
+    Motorbike Loans
+  </Link>
+</li>
+
+<li>
+  <Link to="/services/2" className="hover:text-white transition-colors">
+    Personal Loans
+  </Link>
+</li>
+
+<li>
+  <Link to="/services/3" className="hover:text-white transition-colors">
+    Business Loans
+  </Link>
+</li>
+
+<li>
+  <Link to="/services/4" className="hover:text-white transition-colors">
+    Debt Consolidation Loans
+  </Link>
+</li>
+
+<li>
+  <Link to="/services/5" className="hover:text-white transition-colors">
+    Caravan Loans
+  </Link>
+</li>
+
+<li>
+  <Link to="/services/6" className="hover:text-white transition-colors">
+    Boat & Marine Loans
+  </Link>
+</li>
+
+<li>
+  <Link to="/services/7" className="hover:text-white transition-colors">
+    Equipment Finance
+  </Link>
+</li>
+
+<li>
+  <Link to="/services/8" className="hover:text-white transition-colors">
+    Insurance Solutions
+  </Link>
+</li>
+
+  </ul>
             </div>
           </div>
 
@@ -77,15 +121,15 @@ export default function Footer() {
         <div className="border-t border-blue-400 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-blue-100">© 2025 FYN. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-blue-300 transition-colors">
+            <Link to="/privacy" className="hover:text-blue-300 transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-blue-300 transition-colors">
+            </Link>
+           <Link to="/terms" className="hover:text-blue-300 transition-colors">
               Terms of Service
-            </a>
-            <a href="#" className="hover:text-blue-300 transition-colors">
+            </Link>
+             {/* <Link to="/privacy" className="hover:text-blue-300 transition-colors">
               Cookies
-            </a>
+            </Link> */}
           </div>
         </div>
       </div>

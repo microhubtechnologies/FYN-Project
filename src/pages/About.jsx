@@ -215,14 +215,14 @@ export default function AboutPage({ onBack }) {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        className="py-20 sm:py-32"
+        className="py-10 sm:py-18"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             {/* LEFT: Content */}
             <motion.div
               variants={itemVariants}
-              className="space-y-8"
+              className="space-y-6"
             >
               <div className="space-y-6">
                 <p className="text-xs sm:text-sm font-semibold tracking-[0.22em] text-blue-600 uppercase">
@@ -320,16 +320,16 @@ export default function AboutPage({ onBack }) {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="py-20 sm:py-32 bg-slate-50"
+        className="py-12 sm:py-20 bg-slate-50"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             {/* Left side - Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
-              className="space-y-8"
+              className="space-y-6"
             >
               <div className="space-y-6">
                 <motion.p
@@ -479,7 +479,7 @@ export default function AboutPage({ onBack }) {
       </motion.section> */}
 
       {/* How It Works Section */}
-     <section className="relative py-20 sm:py-32 bg-gradient-to-b from-blue-50 via-white to-blue-100">
+     <section className="relative py-12 sm:py-20 bg-gradient-to-b from-blue-50 via-white to-blue-100">
 
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div
@@ -557,10 +557,10 @@ export default function AboutPage({ onBack }) {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="py-20 sm:py-32 bg-slate-50"
+        className="py-12 sm:py-20 bg-slate-50"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div variants={itemVariants} className="text-center mb-16">
+          <motion.div variants={itemVariants} className="text-center mb-10">
             <p className="text-xs sm:text-sm font-semibold tracking-[0.22em] text-blue-600 uppercase mb-4">
               What We Offer
             </p>
@@ -622,22 +622,20 @@ export default function AboutPage({ onBack }) {
 
       {/* CTA Section - Modern Design */}
       <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="relative py-24 sm:py-40 overflow-hidden"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  className="relative py-12 sm:py-20 overflow-hidden"  // yahan change
+>
+  <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+    <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">  {/* yahan bhi thoda kam */}
+      {/* Left Side - Content */}
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="space-y-6"  // pehle space-y-8 tha
       >
-        
-        
-        <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Side - Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
-            >
               <div className="space-y-4">
                 <motion.span
                   initial={{ opacity: 0 }}
