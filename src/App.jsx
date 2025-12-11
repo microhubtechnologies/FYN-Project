@@ -13,7 +13,7 @@ import ServiceDetailPage from "./pages/ServiceDetail"
 // import Insurance from "./pages/services/Insurance"
 // import HomeLoan from "./pages/services/HomeLoan"
 import Calculator from "./pages/Calculator"
-import Apply from "./pages/Apply"
+
 import Contact from "./pages/Contact"
 import NotFound from "./pages/NotFound"
 import PrivacyPolicyPage from "./pages/Privacy"
@@ -49,7 +49,7 @@ export default function App() {
           <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
 
           <Route path="/calculator" element={<Calculator />} />
-          {/* <Route path="/apply" element={<Apply />} /> */}
+        
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<Terms/>} />
           <Route path="/contact" element={<Contact />} />

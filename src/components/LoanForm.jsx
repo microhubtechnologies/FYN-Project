@@ -1,16 +1,32 @@
+
 "use client"
 
 import { motion } from "framer-motion"
 import StepLoanDetails from "./steps/StepLoanDetails"
 import StepPersonalInfo from "./steps/StepPersonalInfo"
+import StepContact from "./steps/StepContact"   
 import StepEmployment from "./steps/StepEmployment"
 import StepVerification from "./steps/StepVerification"
 import StepReview from "./steps/StepReview"
+import StepFinance from "./steps/StepFinance"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
-const stepComponents = [StepLoanDetails, StepPersonalInfo, StepEmployment, StepVerification, StepReview]
+const allStepComponents = [
+  StepLoanDetails,     // step 0
+  StepPersonalInfo,    // step 1
+  StepContact,         // step 2   ✅ correct position
+  StepEmployment,
+  StepFinance,      // step 3
+  StepVerification,    // step 4
+  StepReview
+             // step 5
+];
 
-export default function LoanForm({ step, steps, formData, onFormChange, onNext, onPrev, errors = {} }) {
+const expressStepComponents = [StepLoanDetails,
+  StepPersonalInfo,]
+
+export default function LoanForm({ step, steps, formData, onFormChange, onNext, onPrev, errors = {}, mode = "full" }) {
+  const stepComponents = mode === "express" ? expressStepComponents : allStepComponents
   const StepComponent = stepComponents[step]
 
   return (
@@ -37,7 +53,13 @@ export default function LoanForm({ step, steps, formData, onFormChange, onNext, 
         transition={{ duration: 0.4, delay: 0.1 }}
         className="bg-white rounded-xl shadow-md p-4 md:p-6 lg:p-8 border border-slate-100"
       >
-        <StepComponent formData={formData} onFormChange={onFormChange} errors={errors} />
+       <StepComponent 
+    formData={formData}
+    onFormChange={onFormChange}
+    errors={errors}
+    mode={mode} 
+/>
+
       </motion.div>
 
       {/* Navigation */}

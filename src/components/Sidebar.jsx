@@ -1,23 +1,31 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CheckCircle, Circle } from "lucide-react"
 
+import { CheckCircle, Circle } from "lucide-react"
+import Logo from "../assets/logo.webp"
+import { Link } from "react-router-dom"
 export default function Sidebar({ currentStep, steps, onStepClick }) {
   return (
-    <div className="hidden md:flex w-64 bg-gradient-to-br from-blue-600 via-blue-700 to-slate-900 text-white flex-col pt-8 pb-8 px-6 shadow-2xl sticky top-0 h-screen">
+    <div className="hidden md:flex w-64 bg-blue-300 text-white flex-col pt-8 pb-8 px-6 shadow-2xl sticky top-0 h-screen">
       {/* Logo */}
-      <div className="mb-12">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-2xl font-bold bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent"
-        >
-          FYN
-        </motion.div>
-        <p className="text-blue-100 text-xs mt-1.5">Loan Application</p>
-      </div>
+  <div className="mb-12">
+  <Link to="/">
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="w-32 cursor-pointer"   // cursor pointer added
+    >
+      <img 
+        src={Logo}
+        alt="FYN Logo"
+        className="w-full object-contain"
+      />
+    </motion.div>
+  </Link>
+</div>
+
 
       {/* Progress Overview */}
       <div className="mb-8">
@@ -42,8 +50,8 @@ export default function Sidebar({ currentStep, steps, onStepClick }) {
               />
               <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#fff" />
-                  <stop offset="100%" stopColor="#dbeafe" />
+                  <stop offset="0%" stopColor="#181616ff" />
+                  <stop offset="100%" stopColor="#141415ff" />
                 </linearGradient>
               </defs>
             </svg>
@@ -52,8 +60,8 @@ export default function Sidebar({ currentStep, steps, onStepClick }) {
             </div>
           </div>
           <div>
-            <p className="text-blue-100 text-xs uppercase tracking-wider">Progress</p>
-            <p className="text-white font-semibold text-sm">{Math.round(((currentStep + 1) / steps.length) * 100)}%</p>
+            <p className="text-black text-xs uppercase tracking-wider ">Progress</p>
+            <p className="text-black font-semibold text-sm">{Math.round(((currentStep + 1) / steps.length) * 100)}%</p>
           </div>
         </div>
       </div>

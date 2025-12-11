@@ -186,7 +186,7 @@ export default function QuickPrequalForm({ isOpen, onClose, isInline = false }) 
   </div>
 )}
 
-        {/* STEP 4 */}
+       
        {/* STEP 4 - Updated with more content */}
 {/* STEP 4 - Compact Version */}
 {step === 4 && (
@@ -199,7 +199,36 @@ export default function QuickPrequalForm({ isOpen, onClose, isInline = false }) 
 
     <div className="grid md:grid-cols-2 gap-4">
       {/* EXPRESS */}
-      <button
+      {/* <button
+        onClick={() => setData((d) => ({ ...d, mode: "express" }))}
+        className={`group relative p-5 rounded-2xl bg-gradient-to-b from-blue-900/30 to-blue-900/10 backdrop-blur-md border transition-all shadow-lg hover:shadow-xl hover:scale-[1.01]
+        ${data.mode === "express" ? "border-blue-400 ring-2 ring-blue-400/50 bg-blue-900/50" : "border-blue-700/30 hover:border-blue-400"}`}
+      >
+        {data.mode === "express" && (
+          <span className="absolute top-2 right-2 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">✓</span>
+        )}
+
+    
+        <div className="flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl mb-3 border group-hover:border-emerald-400">
+          <span className="text-emerald-400 font-bold text-xs">60s</span>
+        </div>
+
+        <h3 className="text-lg font-semibold text-white mb-3 text-center">Express</h3>
+
+        <div className="space-y-2 mb-3">
+          <div className="flex items-center gap-2 text-xs text-blue-100">
+            <span className="w-4 h-4 bg-emerald-500 rounded-sm flex items-center justify-center text-white text-[10px]">✓</span>
+            Call-back ASAP
+          </div>
+          <div className="flex items-center gap-2 text-xs text-blue-100">
+            <span className="w-4 h-4 bg-blue-500 rounded-sm flex items-center justify-center text-white text-[10px]">⏱</span>
+            Approval varies
+          </div>
+        </div>
+<br></br>
+        <p className="text-[11px] text-blue-300 italic text-center">*High demand may delay response</p>
+      </button> */}
+<button
         onClick={() => setData((d) => ({ ...d, mode: "express" }))}
         className={`group relative p-5 rounded-2xl bg-gradient-to-b from-blue-900/30 to-blue-900/10 backdrop-blur-md border transition-all shadow-lg hover:shadow-xl hover:scale-[1.01]
         ${data.mode === "express" ? "border-blue-400 ring-2 ring-blue-400/50 bg-blue-900/50" : "border-blue-700/30 hover:border-blue-400"}`}
@@ -229,7 +258,52 @@ export default function QuickPrequalForm({ isOpen, onClose, isInline = false }) 
         <p className="text-[11px] text-blue-300 italic text-center">*High demand may delay response</p>
       </button>
 
+
+
       {/* FULL APPLICATION */}
+      {/* <button
+        onClick={() => setData((d) => ({ ...d, mode: "full" }))}
+        className={`group relative p-5 rounded-2xl bg-gradient-to-b from-indigo-900/30 to-purple-900/10 backdrop-blur-md border transition-all shadow-lg hover:shadow-xl hover:scale-[1.01]
+        ${data.mode === "full" ? "border-emerald-400 ring-2 ring-emerald-400/50 bg-indigo-900/50" : "border-blue-700/30 hover:border-emerald-400"}`}
+      >
+        {data.mode === "full" && (
+          <span className="absolute top-2 right-2 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">✓</span>
+        )}
+
+       
+        <div className="flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl mb-3 border group-hover:border-emerald-400">
+          <span className="text-emerald-400 font-bold text-xs">5m</span>
+        </div>
+
+        <h3 className="text-lg font-semibold text-white mb-3 text-center">Full Application</h3>
+
+        <div className="space-y-2 mb-3">
+          <div className="flex items-center gap-2 text-xs text-blue-100">
+            <span className="w-4 h-4 bg-emerald-500 rounded-sm flex items-center justify-center text-white text-[10px]">✓</span>
+            99% info captured
+          </div>
+          <div className="flex items-center gap-2 text-xs text-blue-100">
+            <span className="w-4 h-4 bg-emerald-500 rounded-sm flex items-center justify-center text-white text-[10px]">⚡</span>
+            Under 1hr approval*
+          </div>
+        </div>
+<br></br>
+        <p className="text-[11px] text-blue-300 italic text-center">*May need quick 1-2min call</p>
+      </button>
+    </div>
+
+    <button
+      className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-emerald-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl font-bold w-full text-base shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
+      onClick={() => {
+        onClose?.();
+        navigate("/apply-loan");
+      }}
+    >
+       Start Application
+    </button>
+  </div>
+)} */}
+{/* FULL APPLICATION */}
       <button
         onClick={() => setData((d) => ({ ...d, mode: "full" }))}
         className={`group relative p-5 rounded-2xl bg-gradient-to-b from-indigo-900/30 to-purple-900/10 backdrop-blur-md border transition-all shadow-lg hover:shadow-xl hover:scale-[1.01]
@@ -265,14 +339,13 @@ export default function QuickPrequalForm({ isOpen, onClose, isInline = false }) 
       className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-emerald-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl font-bold w-full text-base shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
       onClick={() => {
         onClose?.();
-        navigate("/apply-loan");
+        navigate("/apply-loan", { state: { mode: data.mode } });
       }}
     >
        Start Application
     </button>
   </div>
 )}
-
 
 
         {step > 1 && (
